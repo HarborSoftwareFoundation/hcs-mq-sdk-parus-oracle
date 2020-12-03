@@ -1,3 +1,3 @@
-# HCS MQ SDK for Oracle
+# PCS MQ SDK for Oracle
 
-HCS MQ SDK is a tool kit for Oracle Database.
+PCS MQ SDK is a tool kit for Oracle Database.

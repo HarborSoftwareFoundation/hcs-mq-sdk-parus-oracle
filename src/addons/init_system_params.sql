@@ -7,8 +7,8 @@ begin
   p_system_init_option
   (
     sunitcode       => 'OptionsSystemGlobal',
-    scode           => 'HcsMqWebProxyServiceAddress',
-    sname           => 'HCS MQ Web Proxy Service Address',
+    scode           => 'PcsMqWebProxyServiceAddress',
+    sname           => 'PCS MQ Web Proxy Service Address',
     nnumb           => l_numb,
     nopt_type       => 1,
     nopt_kind       => 1,
@@ -30,9 +30,9 @@ begin
     ddate_value     => null
   );
 
-  dbms_output.put_line('Created parameter HcsMqWebProxyServiceAddress with number: ' || l_numb);
+  dbms_output.put_line('Created parameter PcsMqWebProxyServiceAddress with number: ' || l_numb);
 exception
   when others then
-    dbms_output.put_line('Failed to create parameter HcsMqWebProxyServiceAddress with number: ' || l_numb);
+    dbms_output.put_line('Failed to create parameter PcsMqWebProxyServiceAddress with number: ' || l_numb);
 end;
 /

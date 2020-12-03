@@ -1,4 +1,4 @@
-create or replace package body hcs_mq_sdk_core
+create or replace package body pcs_mq_sdk_core
 as
   procedure send(p_url_base in varchar2, p_method in varchar, p_content_type in varchar2, p_content in varchar2, p_url_params in varchar2 default null)
   as
@@ -20,7 +20,7 @@ as
     if (l_response.status_code not in (200, 201, 202)) then
       utl_http.end_response(l_response);
 
-      p_exception(0, 'HCS MQ Web Proxy Service interaction error: HttpStatusCode %s.', l_response.status_code);
+      p_exception(0, 'PCS MQ Web Proxy Service interaction error: HttpStatusCode %s.', l_response.status_code);
     end if;
 
     utl_http.read_text(l_response, l_response_value);
@@ -30,9 +30,9 @@ as
       utl_http.end_response(l_response);
     when others then 
       pkg_state.diagnostics_stacked;
-      p_exception(0, 'HCS MQ Web Proxy Service interaction error: %s.', pkg_state.sql_errm);
+      p_exception(0, 'PCS MQ Web Proxy Service interaction error: %s.', pkg_state.sql_errm);
   end;
-end hcs_mq_sdk_core;
+end pcs_mq_sdk_core;
 /
 
-show errors package body hcs_mq_sdk_core;
+show errors package body pcs_mq_sdk_core;

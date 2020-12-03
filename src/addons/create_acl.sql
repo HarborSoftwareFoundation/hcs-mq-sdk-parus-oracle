@@ -1,8 +1,8 @@
 begin
   dbms_network_acl_admin.create_acl
   (
-    acl         => 'hcsmqwebproxyservice.xml',
-    description => 'HTTP Access to HCS MQ Web Proxy Service',
+    acl         => 'pcsmqwebproxyservice.xml',
+    description => 'HTTP Access to PCS MQ Web Proxy Service',
     principal   => 'PARUS',
     is_grant    => true,
     privilege   => 'connect',
@@ -18,7 +18,7 @@ commit;
 begin
   dbms_network_acl_admin.add_privilege
   (
-    acl       => 'hcsmqwebproxyservice.xml',
+    acl       => 'pcsmqwebproxyservice.xml',
     principal => 'PARUS',
     is_grant  => true,
     privilege => 'connect'
@@ -31,7 +31,7 @@ commit;
 begin
   dbms_network_acl_admin.assign_acl
   (
-    acl        => 'hcsmqwebproxyservice.xml',
+    acl        => 'pcsmqwebproxyservice.xml',
     host       => 'localhost',
     lower_port => 7100,
     upper_port => 7100
